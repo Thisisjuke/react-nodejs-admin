@@ -5,10 +5,6 @@ import registerRoutes from './routes'
 const app = express();
 app.use(bodyParser.json());
 
-app.get('/api', (req, res) => {
-    res.json({ status: 'up' });
-})
-
 registerRoutes(app);
 
 app.listen(process.env.SERVER_PORT, err => {

@@ -12,7 +12,7 @@ services:
       - ./front:/home/node/app
     ports:
       - "3000:3000"
-    command: "yarn dev"
+    command: "yarn start"
     networks:
       - frontend
 
