@@ -1,0 +1,28 @@
+version: "3"
+services:
+  front:
+    container_name: front
+    image: "node:14"
+    environment:
+      - BACKEND_SERVER_ENDPOINT=${BACKEND_SERVER_ENDPOINT}
+      - NEXT_PUBLIC_FRONT_BACKEND_SERVER_ENDPOINT=${NEXT_PUBLIC_FRONT_BACKEND_SERVER_ENDPOINT}
+    working_dir: /home/node/app
+    volumes:
+      - ./front:/home/node/app
+    ports:
+      - "3000:3000"
+    command: "yarn dev"
+
+  back:
+    container_name: back
+    image: "node:14"
+    environment:
+      - SERVER_PORT=${API_SERVER_PORT}
+    working_dir: /home/node/app
+    volumes:
+      - ./back:/home/node/app
+    ports:
+      - "4000:${API_SERVER_PORT}"
+    command: "yarn dev"
+    depends_on:
+      - keycloak
