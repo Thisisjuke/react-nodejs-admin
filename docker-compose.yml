@@ -6,12 +6,15 @@ services:
     environment:
       - BACKEND_SERVER_ENDPOINT=${BACKEND_SERVER_ENDPOINT}
       - NEXT_PUBLIC_FRONT_BACKEND_SERVER_ENDPOINT=${NEXT_PUBLIC_FRONT_BACKEND_SERVER_ENDPOINT}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
     working_dir: /home/node/app
     volumes:
       - ./front:/home/node/app
     ports:
       - "3000:3000"
     command: "yarn dev"
+    networks:
+      - frontend
 
   back:
     container_name: back
@@ -24,3 +27,8 @@ services:
     ports:
       - "4000:${API_SERVER_PORT}"
     command: "yarn dev"
+    networks:
+      - frontend
+
+networks:
+  frontend:
