@@ -1,0 +1,7 @@
+svg {
+    stroke: gray;
+}
+
+.selected svg {
+    stroke: #6c49cf;
+}

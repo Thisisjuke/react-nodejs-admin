@@ -9,16 +9,22 @@ export const selectAllUsers = async (req, res) => {
 
 export const getUserById = async (req, res) => {
     const user = await User.where({id: req.params.id}).fetch()
-    const messages = await Message.where({senderId: req.params.id}).fetch()
-    const messagesR = await Message.where({receiverId: req.params.id}).fetch()
+    const messagesSent = await Message.where({senderId: req.params.id}).fetch()
+    const messagesReceived = await Message.where({receiverId: req.params.id}).fetch()
     const media = await Media.where({userId: req.params.id}).fetch()
 
-    res.json({user, messages, messagesR, media});
+    res.json({user, messagesSent, messagesReceived, media});
 }
 
 export const getUserMessages = async (req, res) => {
 
     res.json(await Message.where({senderId: req.params.id}).fetch());
+}
+
+export const countUsers = async (req, res) => {
+
+    const users = await User.fetchAll()
+    res.json(users.length);
 }
 
 export const getUserMedias = async (req, res) => {
