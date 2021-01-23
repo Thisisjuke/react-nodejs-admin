@@ -6,7 +6,7 @@ export default function ReminderCard({ title, content }) {
             </h5>
             <p className="px-4 py-2 text-gray-400">{content}</p>
             <ul className="mt-4 px-4 py-4 space-y-4 divide-y">
-                <h5 className="font-semibold">Import Users from:</h5>
+                <h5 className="font-semibold">Status :</h5>
                 <li className="flex items-start items-center justify-between pt-4">
                     <div className="flex items-start space-x-3">
                         <div>

@@ -3,6 +3,8 @@ import {useParams} from "react-router-dom";
 import {fetchData} from "../lib/api";
 import GithubCard from "../components/Cards/GithubCard";
 import ProfileCard from "../components/Cards/ProfileCard";
+import MessagesCard from "../components/Cards/MessagesCard";
+import MediaCard from "../components/Cards/MediaCard";
 
 export default function UserProfile() {
     const { id } = useParams()
@@ -24,14 +26,12 @@ export default function UserProfile() {
                 <GithubCard url={'https://github.com/Thisisjuke/yubo-test'} />
             </div>
             <div className={"flex mt-6 space-x-8"}>
-                <div className={"w-1/5"}>
+                <div className={"w-1/5 flex-col"}>
                     <ProfileCard user={profile.user}/>
+                    <MediaCard media={profile.media}/>
                 </div>
-                <div className={"w-2/5"}>
-                    wesh
-                </div>
-                <div className={"w-2/5"}>
-    wesh
+                <div className={"flex-grow"}>
+                    <MessagesCard username={profile?.user?.username} sent={profile.messagesSent} received={profile.messagesReceived}/>
                 </div>
             </div>
         </main>
