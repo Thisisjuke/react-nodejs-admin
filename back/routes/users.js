@@ -1,4 +1,4 @@
-import {selectAllUsers, getUserById, getUserMedias, getUserMessages, disableUser, enableUser} from "../handlers/usersHandler";
+import {selectAllUsers, getUserById, getUserMedias, getUserMessages, disableUser, enableUser, countUsers} from "../handlers/usersHandler";
 
 export default [
     {
@@ -24,5 +24,9 @@ export default [
     {
         url: '/api/users/:id/media',
         handler: getUserMedias
+    },
+    {
+        url: '/api/count/users',
+        handler: countUsers
     }
 ]

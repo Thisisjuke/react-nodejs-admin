@@ -1,6 +1,12 @@
-import {selectAllMedias} from "../handlers/mediasHandler";
+import {countMedia, selectAllMedias} from "../handlers/mediasHandler";
 
-export default [{
-    url: '/api/medias',
-    handler: selectAllMedias
-}]
+export default [
+    {
+        url: '/api/medias',
+        handler: selectAllMedias
+    },
+    {
+        url: '/api/count/media',
+        handler: countMedia
+    }
+]
