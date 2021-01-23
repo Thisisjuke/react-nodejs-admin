@@ -27,7 +27,7 @@ export default function ReminderCard({ title, content }) {
                 <li className="py-4 text-sm font-medium text-gray-400">
                     <p className={'mt-4'}>
                         You should
-                        <span className="font-normal text-purple-600 whitespace-nowrap">
+                        <span className="font-normal text-purple-600">
                             {' '}
                             check data availability{' '}
                         </span>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import UserPage from './pages/Users';
-import ChatPage from './pages/Chat';
+import GraphPage from './pages/Graphs';
 import HomePage from './pages/Home';
 import AdminLayout from './layouts/AdminLayout';
 import UserProfile from "./pages/UserProfile";
@@ -17,12 +17,13 @@ export default function App() {
                     <Route path="/users">
                         <UserPage />
                     </Route>
-                    <Route path="/chats">
-                        <ChatPage />
+                    <Route path="/graphs">
+                        <GraphPage />
                     </Route>
                     <Route path="/">
                         <HomePage />
                     </Route>
+
                 </Switch>
             </AdminLayout>
         </Router>
