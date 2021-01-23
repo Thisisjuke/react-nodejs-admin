@@ -58,7 +58,7 @@ Here are few routes you can copy and paste to test :
 ## Frontend : React
 
 ```
-url : http://localhost:4000/api
+url : http://localhost:3000
 ```
 
 ### Available features : 
