@@ -34,7 +34,7 @@ export default function Navbar({ className }) {
                 </NavItem>
             </nav>
             <div className={'flex-grow h-screen'}>
-                <div class={'m-4 text-sm color-gray-100'}>Last information :</div>
+                <div className={'m-4 text-sm color-gray-100'}>Last information :</div>
                 <InfoCard
                     title={'Users Review'}
                     content={

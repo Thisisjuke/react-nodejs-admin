@@ -35,10 +35,7 @@ export const getUserMedias = async (req, res) => {
 export const disableUser = async (req, res) => {
     const user = await User.where({id: req.params.id}).fetch()
     user.set('isDeleted', new Date())
-    user.save(user, {
-        method: 'update',
-        patch: true
-    })
+    user.save()
 
     res.json(user);
 }
@@ -46,10 +43,7 @@ export const disableUser = async (req, res) => {
 export const enableUser = async (req, res) => {
     const user = await User.where({id: req.params.id}).fetch()
     user.set('isDeleted', null)
-    user.save(user, {
-        method: 'update',
-        patch: true
-    })
+    user.save()
 
     res.json(user);
 }

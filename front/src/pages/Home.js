@@ -26,13 +26,13 @@ export default function Home() {
     };
 
     return (
-        <main class="flex-1 h-screen max-h-screen p-5 overflow-hidden overflow-y-scroll">
-            <div class="flex flex-col items-start justify-between pb-6 space-y-4 border-b border-gray-600 lg:items-center lg:space-y-0 lg:flex-row">
-                <h1 class="text-2xl font-semibold whitespace-nowrap">Dashboard</h1>
+        <main className="flex-1 h-screen max-h-screen p-5 overflow-hidden overflow-y-scroll">
+            <div className="flex flex-col items-start justify-between pb-6 space-y-4 border-b border-gray-600 lg:items-center lg:space-y-0 lg:flex-row">
+                <h1 className="text-2xl font-semibold whitespace-nowrap">Dashboard</h1>
                 <GithubCard url={'https://github.com/Thisisjuke/yubo-test'} />
             </div>
 
-            <div class="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 lg:grid-cols-4">
                 <DataCard title={'Total Users'} value={countUsers} />
                 <DataCard title={'Total Messages'} value={countMessages} />
                 <DataCard title={'Total Media'} value={'244555'} />
@@ -44,7 +44,7 @@ export default function Home() {
                 />
             </div>
 
-            <div class="grid grid-cols-1 gap-6 mt-6 lg:grid-cols-2 xl:grid-cols-4 pt-6">
+            <div className="grid grid-cols-1 gap-6 mt-6 lg:grid-cols-2 xl:grid-cols-4 pt-6">
                 <ReminderCard
                     title={'Reminder'}
                     content={
