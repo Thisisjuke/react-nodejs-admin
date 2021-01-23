@@ -32,9 +32,14 @@ export default function Navbar({ className }) {
                         />
                     </svg>
                 </NavItem>
+                <NavItem url={'/graphs'}>
+                    <svg height={28} width={28} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </NavItem>
             </nav>
             <div className={'flex-grow h-screen'}>
-                <div class={'m-4 text-sm color-gray-100'}>Last information :</div>
+                <div className={'m-4 text-sm color-gray-100'}>Last information :</div>
                 <InfoCard
                     title={'Users Review'}
                     content={
@@ -42,7 +47,7 @@ export default function Navbar({ className }) {
                     }
                 />
                 <InfoCard
-                    title={'Chat Review'}
+                    title={'Graphs Review'}
                     content={
                         'Planning: You should review last chats today. Some new discussions has recently been signaled'
                     }

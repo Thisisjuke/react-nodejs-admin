@@ -9,9 +9,9 @@ export const selectAllUsers = async (req, res) => {
 
 export const getUserById = async (req, res) => {
     const user = await User.where({id: req.params.id}).fetch()
-    const messagesSent = await Message.where({senderId: req.params.id}).fetch()
-    const messagesReceived = await Message.where({receiverId: req.params.id}).fetch()
-    const media = await Media.where({userId: req.params.id}).fetch()
+    const messagesSent = await Message.where({senderId: req.params.id}).fetchAll()
+    const messagesReceived = await Message.where({receiverId: req.params.id}).fetchAll()
+    const media = await Media.where({userId: req.params.id}).fetchAll()
 
     res.json({user, messagesSent, messagesReceived, media});
 }
@@ -35,10 +35,7 @@ export const getUserMedias = async (req, res) => {
 export const disableUser = async (req, res) => {
     const user = await User.where({id: req.params.id}).fetch()
     user.set('isDeleted', new Date())
-    user.save(user, {
-        method: 'update',
-        patch: true
-    })
+    user.save()
 
     res.json(user);
 }
@@ -46,10 +43,7 @@ export const disableUser = async (req, res) => {
 export const enableUser = async (req, res) => {
     const user = await User.where({id: req.params.id}).fetch()
     user.set('isDeleted', null)
-    user.save(user, {
-        method: 'update',
-        patch: true
-    })
+    user.save()
 
     res.json(user);
 }
